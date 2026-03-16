@@ -1,6 +1,6 @@
-package com.java.oop.inheritance;
+package com.java.oop.polymorphism;
 
-public class Laptop extends Product{
+public class Laptop extends Product {
     String operatingSystem;
     String processor;
 
@@ -14,9 +14,10 @@ public class Laptop extends Product{
     }
 
     //
-
-    public void displayLaptopDetails(){
-        displayProductDetails();
+    @Override
+    public void displayDetails(){
+        System.out.println("5");
+        super.displayDetails();
         System.out.println("Operating System: " + operatingSystem);
         System.out.println("Processor: " + processor);
     }

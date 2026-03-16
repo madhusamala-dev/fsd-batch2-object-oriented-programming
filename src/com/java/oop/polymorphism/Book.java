@@ -1,6 +1,6 @@
-package com.java.oop.inheritance;
+package com.java.oop.polymorphism;
 
-public class Book extends Product{
+public class Book extends Product {
     String author;
     String publisher;
 
@@ -13,8 +13,10 @@ public class Book extends Product{
         this.publisher = publisher;
     }
 
-    public void displayBookDetails(){
-        displayProductDetails();
+    @Override
+    public void displayDetails(){
+        System.out.println("6");
+       super.displayDetails();
         System.out.println("Author: " + author);
         System.out.println("Publisher: " + publisher);
     }
