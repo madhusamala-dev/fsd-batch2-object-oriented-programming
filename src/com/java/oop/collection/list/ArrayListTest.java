@@ -1,14 +1,12 @@
-package com.java.oop.collection.set;
+package com.java.oop.collection.list;
 
 import com.java.oop.model.Customer;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.TreeSet;
+import java.util.ArrayList;
 
-public class CustomerSet {
+public class ArrayListTest {
     public static void main(String[] args) {
-        TreeSet<Customer> customers = new TreeSet<>();
+        ArrayList<Customer> customersList = new ArrayList<>();
         Customer customer1 = new Customer();
         customer1.setId(103).setName("John").setEmail("customer3@gmail.com").setPhoneNo(9876543210L).setActive(true).setPassword("Abcd@1234");
         Customer customer2 = new Customer();
@@ -17,21 +15,14 @@ public class CustomerSet {
         customer3.setId(101).setName("Madhu Samala").setEmail("customer1@gmail.com").setPhoneNo(9876543210L).setActive(true).setPassword("Abcd@1234");
         Customer customer4 = new Customer();
         customer4.setId(101).setName("Madhu Samala").setEmail("customer1@gmail.com").setPhoneNo(9876543210L).setActive(true).setPassword("Abcd@1234");
-
-        customers.add(customer1);
-        customers.add(customer2);
-        customers.add(customer3);
-        customers.add(customer4);
-
-        System.out.println(customers);
-
-        Iterator<Customer> iterator = customers.iterator();
-        Customer customer = null;
+        customersList.add(customer1);
+        customersList.add(customer2);
+        customersList.add(customer3);
+        customersList.add(customer4);
+        System.out.println(customersList);
         CustomerService customerService = new CustomerService();
-        while(iterator.hasNext()){
-            customer = iterator.next();
+        for(Customer customer : customersList){
             customerService.displayCustomer(customer);
         }
-
     }
 }
